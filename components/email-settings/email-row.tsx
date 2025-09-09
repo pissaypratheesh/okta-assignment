@@ -3,6 +3,11 @@ import { Badge } from '@/components/ui/badge';
 import { EmailActionsMenu } from './email-actions-menu';
 import { Email } from '@/lib/data/emails';
 
+// Text constants
+const TEXT = {
+  DEFAULT_EMAIL_DESCRIPTION: 'This email address is the default for all notifications and account access.',
+} as const;
+
 interface EmailRowProps extends Email {
   onManage?: (email: string) => void;
   onRemove?: (email: string) => void;
@@ -35,9 +40,9 @@ export const EmailRow: React.FC<EmailRowProps> = ({
           {unverified && <Badge label="UNVERIFIED" variant="gray" />}
         </div>
         {isDefault && (
-          <div className="text-xs text-gray-500 mt-1">
-            This email address is the default for all notifications and account access.
-          </div>
+          <p className="text-xs text-gray-500 mt-1">
+            {TEXT.DEFAULT_EMAIL_DESCRIPTION}
+          </p>
         )}
       </div>
       <EmailActionsMenu onManage={handleManage} onRemove={handleRemove} />

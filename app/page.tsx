@@ -9,6 +9,14 @@ import {
 import { useEmailSettings } from '@/hooks/use-email-settings';
 import { LAYOUT_STYLES, TEXT_STYLES } from '@/lib/constants/styles';
 
+// Text constants
+const TEXT = {
+  EMAILS_TITLE: 'Emails',
+  EMAILS_DESCRIPTION: 'Emails you can use to sign in to your account.',
+  EMAIL_SETTINGS_TITLE: 'Email settings',
+  EMAIL_SETTINGS_DESCRIPTION: 'Configure how emails are used in relation to your account.',
+} as const;
+
 export default function EmailSettingsPage() {
   const {
     primaryEmail,
@@ -30,9 +38,9 @@ export default function EmailSettingsPage() {
         <div className={LAYOUT_STYLES.contentWrapper}>
           <section className={LAYOUT_STYLES.sectionWrapper}>
             <div className={LAYOUT_STYLES.sectionHeader}>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Emails</h1>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">{TEXT.EMAILS_TITLE}</h1>
               <p className="text-gray-600 mb-6">
-                Emails you can use to sign in to your account.
+                {TEXT.EMAILS_DESCRIPTION}
               </p>
             </div>
             <EmailList 
@@ -43,9 +51,9 @@ export default function EmailSettingsPage() {
 
           <section>
             <div className={LAYOUT_STYLES.sectionHeader}>
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Email settings</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">{TEXT.EMAIL_SETTINGS_TITLE}</h2>
               <p className="text-gray-600 mb-6">
-                Configure how emails are used in relation to your account.
+                {TEXT.EMAIL_SETTINGS_DESCRIPTION}
               </p>
             </div>
             <EmailSettingsForm

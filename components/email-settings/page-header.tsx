@@ -1,6 +1,12 @@
 import React from 'react';
 import { HEADER_STYLES, INTERACTIVE_STYLES } from '@/lib/constants/styles';
 
+// Text constants
+const TEXT = {
+  BACK_ARIA_LABEL: 'Back',
+  NAV_TEXT: 'Your personal account',
+} as const;
+
 interface PageHeaderProps {
   onBackClick?: () => void;
 }
@@ -11,7 +17,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({ onBackClick }) => {
       <div className={HEADER_STYLES.headerContainer}>
         <nav className={HEADER_STYLES.nav}>
         <button 
-          aria-label="Back" 
+          aria-label={TEXT.BACK_ARIA_LABEL} 
           className={INTERACTIVE_STYLES.backButton}
           onClick={onBackClick}
         >
@@ -25,7 +31,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({ onBackClick }) => {
             />
           </svg>
         </button>
-        <span className={HEADER_STYLES.navText}>Your personal account</span>
+        <span className={HEADER_STYLES.navText}>{TEXT.NAV_TEXT}</span>
       </nav>
       </div>
     </header>
