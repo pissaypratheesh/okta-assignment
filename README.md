@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Project Documentation
+
+For detailed information about this Email Settings Application, including architecture, component structure, implementation decisions, and recent improvements, please see the [PROJECT_README.md](./PROJECT_README.md) file.
+
 ## Getting Started
 
 First, run the development server:
